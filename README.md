@@ -1,5 +1,6 @@
 Areeb Automated Task 
 
+Automated test written as BDD which is based on Cucumber and selenium using java working on "https://courses.ultimateqa.com/collections" webiste 
 
 First: Website Scenario Features
 
