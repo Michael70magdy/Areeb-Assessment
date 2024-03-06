@@ -71,7 +71,7 @@ public class BDDScenario {
         MyAccount.click();
     }
 
-    @When("I upload a profile picture")
+   @When("I upload a profile picture")
     public void i_upload_a_profile_picture() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
 
@@ -81,15 +81,34 @@ public class BDDScenario {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
 
         WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
-        /* make sure to put a valid image path relative to device reviewing the code */
-        fileInput.sendKeys("C:/Users/Maikool/Desktop/Pic.jpeg");
-
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(999));
+        /*make sure to put a valid image path relative to device reviewing the code*/
+        //        fileInput.sendKeys("C:/Users/Maikool/Desktop/Pic.jpeg");
+        //Uploading image using URL
+        String imageUrl = "https://i0.wp.com/www.nasscal.com/wp-content/uploads/2015/09/cropped-testimage.png?fit=881%2C1200&ssl=1&w=640";
+        // Download the image from the URL to a temporary location
+        String tempImagePath = downloadImage(imageUrl);
+        // Upload the image using the temporary file path
+        fileInput.sendKeys(tempImagePath);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9999));
     }
+    private static String downloadImage(String imageUrl) {
+        try {
+            URL url = new URL(imageUrl);
+            InputStream in = url.openStream();
+            String tempDir = System.getProperty("java.io.tmpdir");
+            Path tempImagePath = Paths.get(tempDir, "tempImage"+Mail+".jpg");
+            Files.copy(in, tempImagePath);
+            in.close();
+            return tempImagePath.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
 
+    }
     @When("I change the password to a new one")
     public void i_change_the_password_to_a_new_one() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9999));
         driver.findElement(By.xpath("/html/body/div[2]/div/div/nav/ul/li[2]/a")).click();
         WebElement currentPasswordInput = driver.findElement(By.id("user[current_password]"));
         currentPasswordInput.sendKeys("TestPassword");
