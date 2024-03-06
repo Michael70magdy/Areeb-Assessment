@@ -44,7 +44,7 @@ Second: Describtion for each test case
 
 	5- "I upload a profile picture"
  		- to avoid paths corruptions and errors i added a method which uploads image from URL that acts as picture from device
-		-two commented lines if needed to upload from device - user uploads his profile photo and save changes make sure to pass a valid path to the image filed as it changes from device 				"fileInput.sendKeys("Your_path_here");"
+		- two commented lines if needed to upload from device - user uploads his profile photo and save changes make sure to pass a valid path to the image filed as it changes from device"fileInput.sendKeys("Your_path_here");"
 
 	6- "I change the password to a new one"
 		- user navigates to change password page then change his current password by entring his old password then his new password and confirming it then commit his change 
