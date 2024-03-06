@@ -3,7 +3,7 @@ Areeb Automated Task
 Automated test written as BDD which is based on Cucumber and selenium using java working on "https://courses.ultimateqa.com/collections" webiste
 
 IMPORTANT ::: """ make sure to do the reCaptcha if appeared """ :::
-
+          ::: Also make sure of image path at test cases to be accurate to current device :::
 First: Website Scenario Features
 
 	
