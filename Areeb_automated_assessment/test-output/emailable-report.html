@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta charset='utf-8'>
+<title>TestNG Report</title>
+<style type="text/css">
+table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}
+td,th {border:1px solid #009;padding:.25em .5em}
+.result th {vertical-align:bottom}
+.param th {padding-left:1em;padding-right:1em}
+.param td {padding-left:.5em;padding-right:2em}
+.stripe td,.stripe th {background-color: #E6EBF9}
+.numi,.numi_attn {text-align:right}
+.total td {font-weight:bold}
+.passedodd td {background-color: #0A0}
+.passedeven td {background-color: #3F3}
+.skippedodd td {background-color: #CCC}
+.skippedodd td {background-color: #DDD}
+.failedodd td,.numi_attn {background-color: #F33}
+.failedeven td,.stripe .numi_attn {background-color: #D00}
+.stacktrace {white-space:pre;font-family:monospace}
+.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="testOverview">
+<tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">D:/Courses and certificates/Testing Udemy/Selenium WebDriver/Areeb_automated_assessment</a></td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">31.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr id="t1"><th colspan="5">D:/Courses and certificates/Testing Udemy/Selenium WebDriver/Areeb_automated_assessment &#8212; failed</th></tr>
+<tr class="failedodd"><td>runner.Runner</td><td><a href="#m1"><b>runScenario</b> (cucumber) ("Runs Cucumber Scenarios")</a></td><td class="numi">1</td><td>1709723011769</td><td class="numi">30019</td></tr>
+</table>
+<h1>D:/Courses and certificates/Testing Udemy/Selenium WebDriver/Areeb_automated_assessment</h1>
+<h2 id="m1">runner.Runner:runScenario</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>&quot;Register, Upload Profile Picture, Change Password, and Verify Login with New Password&quot;</td>
+<td>&quot;User Registration and Profile Management on UltimateQA Website&quot;</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">org.openqa.selenium.InvalidArgumentException: invalid argument: File not found : https://drive.google.com/file/d/1zTMq03yP3QHkWYTn0TGpnHfj7DMQH26i/view?usp=drive_link
+  (Session info: MicrosoftEdge=122.0.2365.66)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [a587734ba6d02ed9b82a40495fae4424, sendKeysToElement {value=[Ljava.lang.CharSequence;@b11015, id=f.9FA62DBD44E66F40905FF72A0A6571EE.d.E6A37D9F6EF8DF72024D33EA52AE2522.e.134}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 122.0.2365.66, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:57241}, msedge: {msedgedriverVersion: 122.0.2365.66 (ab363614b8f0..., userDataDir: C:\Users\Maikool\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57241/devtoo..., se:cdpVersion: 122.0.2365.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[EdgeDriver: MicrosoftEdge on windows (a587734ba6d02ed9b82a40495fae4424)] -&gt; xpath: //input[@type=&apos;file&apos;]]
+Session ID: a587734ba6d02ed9b82a40495fae4424
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at Scenario.BDDScenario.i_upload_a_profile_picture(BDDScenario.java:85)
+	at ✽.I upload a profile picture(file:///D:/Courses%20and%20certificates/Testing%20Udemy/Selenium%20WebDriver/Areeb_automated_assessment/src/main/resources/Features/register.feature:8)
+</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
