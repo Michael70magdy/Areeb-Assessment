@@ -4,7 +4,6 @@ Automated test written as BDD which is based on Cucumber and selenium using java
 
 
 IMPORTANT ::: """ make sure to do the reCaptcha if appeared """ :::
-
 	  ::: Also make sure of image path at test cases to be accurate to current device if you don't want to upload from internet :::
 
 First: Website Scenario Features
