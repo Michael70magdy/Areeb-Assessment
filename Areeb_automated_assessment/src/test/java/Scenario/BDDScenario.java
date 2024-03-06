@@ -81,7 +81,7 @@ public class BDDScenario {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
 
         WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
-
+        /* make sure to put a valid image path relative to device reviewing the code */
         fileInput.sendKeys("C:/Users/Maikool/Desktop/Pic.jpeg");
 
 
