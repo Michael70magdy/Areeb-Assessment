@@ -68,3 +68,9 @@ Second: Describtion for each test case
 		- site check homepage url title with title which ensures that user successfully logged in 
 
 	13- "Website closes after the cycle"
+third: to run test cases 
+	go to testng xml file and rigth click then run testng file 
+ 		or 
+   	go to ( " src/test/java/runner/Runner.java " ) and right click then run Runner 
+		or 
+  	go to ( " src/test/java/Scenario/BDDScenario.java " ) and right click then run BDDScenario
