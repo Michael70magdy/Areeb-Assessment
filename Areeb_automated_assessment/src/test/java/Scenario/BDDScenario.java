@@ -28,7 +28,7 @@ public class BDDScenario {
     private WebDriverWait wait;
 
     @Given("I am on the UltimateQA website registration page")
-    public void i_am_on_the_ultimate_qa_website_registration_page() {
+    public void NavigateToUltimateQARegistrationPage() {
         driver = new EdgeDriver();
         driver.get("https://courses.ultimateqa.com/collections");
         driver.manage().window().maximize();
@@ -41,7 +41,7 @@ public class BDDScenario {
     public static String Mail = new StringBuilder().append(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 8)).append("@gmail.com").toString();
 
     @When("I fill in the registration form with valid information")
-    public void i_fill_in_the_registration_form_with_valid_information() {
+    public void FillRegistrationFormWithValidInformation() {
 
         WebElement FirstName = driver.findElement(By.id("user[first_name]"));
         FirstName.sendKeys("userTestFirstName");
@@ -62,13 +62,13 @@ public class BDDScenario {
     }
 
     @When("I click the Sign Up button")
-    public void i_click_the_sign_up_button() {
+    public void ClickSignUpButton() {
         driver.findElement(By.xpath("/html/body/main/div/div/article/form/div[6]/button")).click();
     }
 
 
     @Then("I should be redirected to the profile page")
-    public void i_should_be_redirected_to_the_profile_page() {
+    public void RedirectToProfilePage() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         WebElement profile = driver.findElement(By.xpath("/html/body/header/div[2]/div/nav/ul/li[2]"));
         profile.click();
@@ -78,17 +78,12 @@ public class BDDScenario {
     }
 
     @When("I upload a profile picture")
-    public void i_upload_a_profile_picture() {
+    public void UploadProfilePicture() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
-
         WebElement uploadButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/main/form/div/div[1]/div/div/label"));
-        //uploadButton.click();
-
+        
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
-
         WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
-        /*make sure to put a valid image path relative to device reviewing the code*/
-//        fileInput.sendKeys("C:/Users/Maikool/Desktop/Pic.jpeg");
         String imageUrl = "https://i0.wp.com/www.nasscal.com/wp-content/uploads/2015/09/cropped-testimage.png?fit=881%2C1200&ssl=1&w=640";
         // Download the image from the URL to a temporary location
         String tempImagePath = downloadImage(imageUrl);
@@ -112,7 +107,7 @@ public class BDDScenario {
 
     }
     @When("I change the password to a new one")
-    public void i_change_the_password_to_a_new_one() {
+    public void ChangePasswordToNewOne() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9999));
         driver.findElement(By.xpath("/html/body/div[2]/div/div/nav/ul/li[2]/a")).click();
         WebElement currentPasswordInput = driver.findElement(By.id("user[current_password]"));
@@ -125,14 +120,14 @@ public class BDDScenario {
     }
 
     @When("I log out")
-    public void i_log_out() {
+    public void LogOut() {
         WebElement profile = driver.findElement(By.xpath("/html/body/header/div[2]/div/nav/ul/li[2]/button"));
         profile.click();
         driver.findElement(By.xpath("//*[@id=\"header-dropdown-menu\"]/li[4]")).click();
     }
 
     @When("I attempt to log in with the old password")
-    public void i_attempt_to_log_in_with_the_old_password() {
+    public void AttemptLoginWithOldPassword() {
         driver.get("https://courses.ultimateqa.com/users/sign_in");
         WebElement emailInput = driver.findElement(By.id("user[email]"));
         emailInput.sendKeys(Mail);
@@ -142,20 +137,20 @@ public class BDDScenario {
     }
 
     @Then("I should not be logged in")
-    public void i_should_not_be_logged_in() {
+    public void ShouldNotBeLoggedIn() {
 
         assertTrue(driver.getCurrentUrl().contains("/sign_in"));
     }
 
     @Then("I should see an error message indicating invalid credentials")
-    public void i_should_see_an_error_message_indicating_invalid_credentials() {
+    public void SeeInvalidCredentialsErrorMessage() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
         WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"flash\"]/div/p"));
         assertEquals("Invalid email or password.", errorMessage.getText());
     }
 
     @When("I attempt to log in with the new password")
-    public void i_attempt_to_log_in_with_the_new_password() {
+    public void AttemptLoginWithNewPassword() {
         driver.get("https://courses.ultimateqa.com/users/sign_in");
         WebElement emailInput = driver.findElement(By.id("user[email]"));
         emailInput.sendKeys(Mail);
@@ -166,7 +161,7 @@ public class BDDScenario {
 
 
     @Then("I should be successfully logged in")
-    public void i_should_be_successfully_logged_in() {
+    public void ShouldBeSuccessfullyLoggedIn() {
 
         assertEquals("Sign In - Ultimate QA", driver.getTitle());
     }
